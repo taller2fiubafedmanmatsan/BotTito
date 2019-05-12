@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 import json
 
-HELP = '@tito help: muestra los comandos disponibles \n @tito info: muestra información del canal \n @tito mute <n>: desactiva respuestas por n segundos \n @tito me: muestra información del usuario que envia el mensaje.'
+HELP = '@tito help: muestra los comandos disponibles \\n @tito info: muestra información del canal \\n @tito mute <n>: desactiva respuestas por n segundos \\n @tito me: muestra información del usuario que envia el mensaje.'
 ERROR = 'Comando invalido'
 
 def index(request):
