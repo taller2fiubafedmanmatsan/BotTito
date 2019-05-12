@@ -23,7 +23,7 @@ def help(request):
 def mute(request,time_mute):
     if request.method == 'GET':
         try:
-            time.sleep(time_mute)
+            time.sleep(int(time_mute))
             response = json.dumps([{'Message': OK_SLEEP }])
         except:
             response = json.dumps([{'Error': ERROR }])
