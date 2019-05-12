@@ -25,7 +25,7 @@ SECRET_KEY = 's8iaq+il#82#-7^@@tpjeq0)hk3(l&gp3(figk7uszok@1b!s#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bot-tito-t2.herokuapp.com']
 
 
 # Application definition
