@@ -21,4 +21,5 @@ from tito import views
 urlpatterns = [
     #path('admin/', admin.site.urls),
     path('',views.index),
+    path('tito/help', views.help)
 ]
