@@ -21,7 +21,7 @@ from tito import views
 urlpatterns = [
     #path('admin/', admin.site.urls),
     path('',views.index),
-    path('tito/help', views.help)
-    path('tito/mute/<str:time_mute>', views.mute)
+    path('tito/help', views.help),
+    path('tito/mute/<str:time_mute>', views.mute),
 
 ]
