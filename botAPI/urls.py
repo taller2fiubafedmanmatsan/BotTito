@@ -22,6 +22,6 @@ urlpatterns = [
     #path('admin/', admin.site.urls),
     path('',views.index),
     path('tito/help', views.help)
-    path(r'^tito/mute/(?P<time_mute>\d+)/$', views.mute)
+    path('tito/mute/<str:time_mute>', views.mute)
 
 ]
