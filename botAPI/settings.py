@@ -25,7 +25,7 @@ SECRET_KEY = 's8iaq+il#82#-7^@@tpjeq0)hk3(l&gp3(figk7uszok@1b!s#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bot-tito-t2.herokuapp.com']
+ALLOWED_HOSTS = ['bot-tito-t2.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'botAPI.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'bot',
+        'USER': 'mati',
+        'PASSWORD': 'redlive4582',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
