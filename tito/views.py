@@ -4,6 +4,7 @@ from .message import Message
 from datetime import datetime
 from datetime import timedelta
 from .models import Client
+from .requester_server import RequesterServer
 import traceback
 
 
@@ -14,6 +15,8 @@ HELP = '@tito help: muestra los comandos disponibles \\n @tito info: muestra inf
 ERROR = 'Comando invalido'
 NO_ACTION = 'Tito no puede hacer eso'
 OK_SLEEP = 'Tito ya no esta dormido'
+OK = 'Tito Ok'
+
 
 def index(request):
     response = json.dumps([{'Message': 'Hello i am Tito'}])
@@ -37,7 +40,7 @@ def work(request):
 
 def action(json_action, message):
     if(json_action == 'help'):
-        return help_action()
+        return help_action(message)
     elif(json_action == 'mute'):
         return mute(message)
     elif(json_action == 'me'):
@@ -50,8 +53,11 @@ def action(json_action, message):
 def no_action_error():
     return json.dumps([{'Error': NO_ACTION }])
 
-def help_action():
-    return json.dumps([{'Message': HELP }])
+def help_action(message):
+    requester = RequesterServer()
+    requester.send_message(HELP,message.username,message.workspace, message.channel)
+
+    return json.dumps([{'Message': OK}])
 
 def mute(message):
     secs = int(message.argument())

@@ -30,3 +30,8 @@ Werkzeug==0.15.2
 whitenoise==3.3.1
 django==2.2.0
 dj-database-url==0.2.1
+requests==2.22.0
+urllib3==1.25.3
+certifi==2019.3.9
+chardet==3.0.4
+idna==2.8
