@@ -6,7 +6,6 @@ Click==7.0
 enum34==1.1.6
 funcsigs==1.0.2
 gunicorn==19.9.0
-idna==2.6
 ipaddress==1.0.17
 itsdangerous==1.1.0
 Jinja2==2.10.1
@@ -30,3 +29,8 @@ Werkzeug==0.15.2
 whitenoise==3.3.1
 django==2.2.0
 dj-database-url==0.2.1
+requests==2.22.0
+urllib3==1.25.3
+certifi==2019.3.9
+chardet==3.0.4
+idna==2.8

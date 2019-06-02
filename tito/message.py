@@ -7,6 +7,7 @@ class Message:
         self.message = body['message']
         self.workspace = body['workspace']
         self.channel = body['channel']
+        self.username = body['sender']
         self.action = self.message.split(" ")[0]
 
     def client(self):
