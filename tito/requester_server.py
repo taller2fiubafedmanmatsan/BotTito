@@ -9,7 +9,7 @@ class RequesterServer:
     BASIC_URL= "https://app-server-t2.herokuapp.com"
     USERS_URL= "/api/users"
     MESSAGE_URL = "/api/messages"
-    TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2YzMDM0ODlmN2FlNjAwMDQwZjE3MTIiLCJpYXQiOjE1NTk0Mjk5NjEsImV4cCI6MTU1OTUxNjM2MX0.w5B4fTdyHMzhylQE-Az4hnDg-76mDZVlNE4Ac7vgHms"
+    TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2YzMWZmYmFkNGZmZDAwMDRiOTFmNjciLCJpYXQiOjE1NTk0MzczMDcsImV4cCI6MTU1OTUyMzcwN30.X6KXy_qBYuKp_Q_7HzUU0zXIv3GugPS2VIXY5BLiScw"
     TYPE_TEXT = "2"
 
     def __init__(self):
