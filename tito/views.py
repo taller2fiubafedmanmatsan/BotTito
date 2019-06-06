@@ -65,7 +65,10 @@ def help_action(message):
     return json.dumps([{'Message': OK}])
 
 def mute(message):
-    secs = int(message.argument())
+    try:
+        secs = int(message.argument())
+    except Exception as e:
+        secs = 0
     time = datetime.now() + timedelta(seconds=secs)
     client = Client(name=message.client(), mute_time=time)
     client.save()

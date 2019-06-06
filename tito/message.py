@@ -15,7 +15,10 @@ class Message:
         return client
 
     def argument(self):
-        argument = self.message.split(" ")[1]
+        try:
+            argument = self.message.split(" ")[1]
+        except IndexError as e:
+            argument = "0"
         return argument
 
 
