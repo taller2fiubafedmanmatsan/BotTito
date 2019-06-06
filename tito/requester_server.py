@@ -10,7 +10,7 @@ class RequesterServer:
     USERS_URL= "/api/users"
     CHANNEL_URL = "/api/channels/"
     MESSAGE_URL = "/api/messages"
-    TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2Y4NzYzZmQzZjk5MzAwMDQxNTM2NDEiLCJpYXQiOjE1NTk3ODcwNzEsImV4cCI6MTU1OTg3MzQ3MX0.TfdS7NWWiZIUrUNBCE_qFqGqqs9XrZoKhbEMLuCv6-U"
+    TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2Y4ODEzM2E0NGE4ODAwMDQ0Y2Y5ZGQiLCJpYXQiOjE1NTk3ODk4NzV9.Ytvv5UyJoILAC9T0cMaWjCgm5RdA94vJlmnHdT49oVM"
     TYPE_TEXT = "2"
 
     def __init__(self):
