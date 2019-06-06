@@ -17,6 +17,8 @@ ERROR_DEFAULT = 'Hubo un error, Tito esta triste :('
 NO_ACTION = 'Tito no puede hacer eso'
 OK_SLEEP = 'Tito ya no esta dormido'
 OK = 'Tito Ok'
+NO_DATA = 'No tiene'
+TITO_WELCOME = 'Tito te da la bienvenida ;)'
 
 
 def index(request):
@@ -93,8 +95,14 @@ def info_action(message):
     requester = RequesterServer()
     channel_data = requester.channel_info(message.workspace, message.channel)
     msg_name = "Canal: " + channel_data['name'] + "\n"
-    msg_des = "Descripcion: " + channel_data['description'] + "\n"
-    msg_welcome = "Welcome:" + channel_data['welcomeMessage'] + "\n"
+    try:
+        msg_des = "Descripcion: " + channel_data['description'] + "\n"
+    except KeyError as e:
+        msg_des = "Descripcion: " + NO_DATA + "\n"
+    try:
+        msg_welcome = "Welcome:" + channel_data['welcomeMessage'] + "\n"
+    except KeyError as e:
+        msg_welcome = "Welcome:" + NO_DATA + "\n"
     msg_creator = "Creador: " + channel_data['creator']['email'] + "\n"
     msg = msg_name + msg_des + msg_welcome + msg_creator
     requester.send_message(msg,message.username,message.workspace,message.channel)
@@ -103,7 +111,10 @@ def info_action(message):
 def welcome_action(message):
     requester = RequesterServer()
     channel_data = requester.channel_info(message.workspace, message.channel)
-    msg_welcome = channel_data['welcomeMessage']
+    try:
+        msg_welcome = channel_data['welcomeMessage']
+    except KeyError as e:
+        msg_welcome = TITO_WELCOME
     requester.send_message(msg_welcome,message.username,message.workspace,message.channel)
     return json.dumps([{'Message': OK}])
 
