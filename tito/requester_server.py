@@ -10,7 +10,7 @@ class RequesterServer:
     USERS_URL= "/api/users"
     CHANNEL_URL = "/api/channels/"
     MESSAGE_URL = "/api/messages"
-    TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2Y3MDFkMzU3NGYyZDAwMDQxZGZiYWEiLCJpYXQiOjE1NTk2OTE3MzEsImV4cCI6MTU1OTc3ODEzMX0.WfVFAoqhn-aqhCWtbzxic6Vq1RM-9hF-BaExKcId9dY"
+    TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDAxNWY5NGVkYTkzNzAwMDQ5NTM3YzUiLCJpYXQiOjE1NjAzNzEwOTJ9.2ZQRefq-4wnF9lKSdLXIYx69k5EISjkBxaIYOEPrsrw"
     TYPE_TEXT = "2"
 
     def __init__(self):
@@ -33,8 +33,8 @@ class RequesterServer:
         return json_response
 
     def send_message(self,message,username, workspace, channel):
-        url = self.BASIC_URL + self.MESSAGE_URL + "/workspace/" + workspace + "/channel/" + channel
-        payload={'creator': username,'text':message, 'type': self.TYPE_TEXT}
+        url = self.BASIC_URL + self.MESSAGE_URL + "/workspace/" + workspace + "/channel/" + channel + "/bot"
+        payload={'creator': username,'text': message, 'type': self.TYPE_TEXT}
         response = requests.post(url,json=payload, headers={'x-auth-token': self.TOKEN})
 
         response.raise_for_status()
