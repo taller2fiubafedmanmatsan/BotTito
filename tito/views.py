@@ -115,7 +115,7 @@ def welcome_action(message):
     requester = RequesterServer()
     channel_data = requester.channel_info(message.workspace, message.channel)
     try:
-        msg_welcome = channel_data['welcomeMessage']
+        msg_welcome = channel_data['welcomeMessage'] + " " + message.username
     except KeyError as e:
         msg_welcome = TITO_WELCOME
     requester.send_message(msg_welcome,message.username,message.workspace,message.channel)
